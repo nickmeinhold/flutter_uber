@@ -2,10 +2,19 @@ PODS:
   - Flutter (1.0.0)
   - flutter_uber (0.0.1):
     - Flutter
+    - UberRides
+  - UberCore (0.12.0)
+  - UberRides (0.12.0):
+    - UberCore
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
   - flutter_uber (from `.symlinks/plugins/flutter_uber/ios`)
+
+SPEC REPOS:
+  trunk:
+    - UberCore
+    - UberRides
 
 EXTERNAL SOURCES:
   Flutter:
@@ -15,7 +24,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
-  flutter_uber: 3adffd7a826b4d3a45467d966782f140051450b5
+  flutter_uber: 1ecea40b28f622e5e4bb20adaf136c2f93d4599b
+  UberCore: 3fcebb483e716536462d82ad84ef94dd59b75061
+  UberRides: d9f02d2122b6df7316ff9668e03a5f71e170618b
 
 PODFILE CHECKSUM: 1b66dae606f75376c5f2135a8290850eeb09ae83
 
