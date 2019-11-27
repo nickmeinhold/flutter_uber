@@ -11,7 +11,7 @@ https://developer.uber.com/dashboard/
 
 ### iOS 
 
-Add the following to your Info.plist:
+Add the following to your Info.plist to configure the Uber SDK:
 
 ```plist
 <key>UberClientID</key>
@@ -45,4 +45,22 @@ Add the following to your Info.plist:
 </array>
 ```
 
+Add the following to `AppDelegate.swift` to make calls to the RidesAppDelegate to handle URLs:
+
+```Swift
+import UberCore
+    
+@available(iOS 9, *)
+func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
+    let handledUberURL = UberAppDelegate.shared.application(app, open: url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplicationOpenURLOptionsKey.annotation] as Any)
+
+    return handledUberURL
+}
+    
+func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+    let handledUberURL = UberAppDelegate.shared.application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+
+    return handledUberURL
+}
+```
 See also: [Uber iOS Tutorial](https://developer.uber.com/docs/riders/ride-requests/tutorials/api/ios)
